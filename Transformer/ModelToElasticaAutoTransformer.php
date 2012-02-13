@@ -54,7 +54,7 @@ class ModelToElasticaAutoTransformer implements ModelToElasticaTransformerInterf
         $identifierGetter = 'get'.ucfirst($this->options['identifier']);
         $identifier = $object->$identifierGetter();
 
-        return new Elastica_Document($identifier, array_filter($array));
+        return new Elastica_Document($identifier, $array);
     }
 
     /**
